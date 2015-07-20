@@ -1,0 +1,15 @@
+<OutOfBrowserSettings ShortName="手鼓达人(TabourMaster)" EnableGPUAcceleration="True" ShowInstallMenuItem="True">
+  <OutOfBrowserSettings.Blurb>手鼓达人！是模仿PSP上一款经典的音乐游戏！让它来找回曾经PSP带给你的快乐把.</OutOfBrowserSettings.Blurb>
+  <OutOfBrowserSettings.WindowSettings>
+    <WindowSettings Title="手鼓达人(TabourMaster)" Height="400" Width="600" />
+  </OutOfBrowserSettings.WindowSettings>
+  <OutOfBrowserSettings.SecuritySettings>
+    <SecuritySettings ElevatedPermissions="Required" />
+  </OutOfBrowserSettings.SecuritySettings>
+  <OutOfBrowserSettings.Icons>
+    <Icon Size="16,16">icon.png</Icon>
+    <Icon Size="32,32">icon.png</Icon>
+    <Icon Size="48,48">icon.png</Icon>
+    <Icon Size="128,128">icon.png</Icon>
+  </OutOfBrowserSettings.Icons>
+</OutOfBrowserSettings>

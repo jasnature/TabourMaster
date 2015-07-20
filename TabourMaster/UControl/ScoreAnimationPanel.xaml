@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="TabourMaster.UControl.ScoreAnimationPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+     Height="45" Width="150">
+    <Canvas x:Name="root">
+        <TextBlock x:Name="lblScore" FontSize="32" Text="0000000" FontFamily="Arial Black">
+            <TextBlock.Effect>
+                <DropShadowEffect/>
+            </TextBlock.Effect>
+            <TextBlock.Foreground>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="Red" Offset="0.0" />
+                    <GradientStop Color="Violet" Offset="0.2" />
+                    <GradientStop Color="Blue" Offset="0.4" />
+                    <GradientStop Color="Green" Offset="0.6" />
+                    <GradientStop Color="Yellow" Offset="0.8" />
+                    <GradientStop Color="Orange" Offset="1.0" />
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
+    </Canvas>
+</UserControl>

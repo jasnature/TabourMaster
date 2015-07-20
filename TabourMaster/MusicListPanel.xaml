@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="TabourMaster.MusicListPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="600">
+
+    <Grid x:Name="LayoutRoot" Height="300" Width="600">
+        <Grid.Background>
+            <ImageBrush ImageSource="Res/Imgs/bbg.png" />
+        </Grid.Background>
+        <Button Content="选择并开始" Height="31" HorizontalAlignment="Left" Margin="474,267,0,0" Name="btnStart" VerticalAlignment="Top" Width="114" Click="btnStart_Click" Style="{StaticResource btnStyle}" />
+        <ListBox Height="196" Margin="34,67,346,0" Name="lbMusicList" VerticalAlignment="Top" FlowDirection="RightToLeft" SelectionChanged="lbMusicList_SelectionChanged" Background="Transparent">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Height="20" Text="{Binding MusicName}" Width="{Binding Width}" FontWeight="Bold" FontSize="16" FontFamily="Arial Black">
+                      
+                    </TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBlock Height="61" Margin="204,0" TextWrapping="Wrap" Text="歌曲选择" VerticalAlignment="Top" FontSize="48">
+        	<TextBlock.Foreground>
+        		<LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+        			<GradientStop Color="#FF707070" Offset="1"/>
+        			<GradientStop Color="#FFFDB900"/>
+        		</LinearGradientBrush>
+        	</TextBlock.Foreground>
+        </TextBlock>
+        <Button Content="返回主菜单" Height="31" HorizontalAlignment="Left" Margin="12,267,0,0" Name="btnBackMenu" Style="{StaticResource btnStyle}" VerticalAlignment="Top" Width="125" Click="btnBackMenu_Click" />
+        <TextBlock Height="85" HorizontalAlignment="Left" Margin="12,113,0,0" Name="textBlock1" Text="默认歌曲" VerticalAlignment="Top" TextWrapping="Wrap" Width="16" FontSize="14" />
+        <TextBlock FontSize="14" Height="123" HorizontalAlignment="Left" Margin="308,103,0,0" Name="textBlock2" Text="本地录制歌曲" TextWrapping="Wrap" VerticalAlignment="Top" Width="16" />
+        <ListBox FlowDirection="RightToLeft" Height="196" Margin="330,67,50,0" Name="lbLocalMusicList" VerticalAlignment="Top" SelectionChanged="lbLocalMusicList_SelectionChanged" Background="Transparent">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock FontFamily="Arial Black" FontSize="16" FontWeight="Bold" Height="20" Text="{Binding MusicName}" Width="{Binding Width}">
+                        
+                    </TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Content="刷新本地列表" Height="159" HorizontalAlignment="Left" Margin="554,67,0,0" Name="btnUpdateList" Style="{StaticResource btnStyle}" VerticalAlignment="Top" Width="43" Click="btnUpdateList_Click" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="255,269,0,0" Name="textBlock3" Text="播放速度:" VerticalAlignment="Top" Width="64" FontWeight="Bold" Foreground="#FFFFB100" />
+        <TextBlock FontWeight="Bold" Height="23" HorizontalAlignment="Left" Margin="308,269,0,0" Name="tbSpeed" Text="      " VerticalAlignment="Top" Width="64" Foreground="#FF62FF00" />
+    </Grid>
+</UserControl>

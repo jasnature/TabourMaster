@@ -1,0 +1,41 @@
+﻿<navigation:Page x:Class="TabourMaster.MainPage" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           d:DesignWidth="600" d:DesignHeight="400"
+           Title="手鼓达人 by NatureSexy">
+
+    <Grid x:Name="LayoutRoot" Width="600" Height="400">
+
+        <Grid.Resources>
+            
+                <!--<DoubleAnimation x:Name="ufadein" Duration="0:0:0.5" To="600" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" />
+                <DoubleAnimation x:Name="ufadeOut" Duration="0:0:0.5" To="600" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" />
+                <DoubleAnimationUsingKeyFrames x:Name="uopacity" Storyboard.TargetProperty="(UIElement.Opacity)" >
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>-->
+            
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="300" />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+        <HyperlinkButton Content="作者博客(NatureSexy)" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="413,65,0,0" Name="hyperlinkButton1" VerticalAlignment="Top" Width="175" NavigateUri="http://naturesex.cnblogs.com" FontSize="16" TargetName="_blank" ClickMode="Release" />
+        <TextBlock Grid.Row="1" Height="45" HorizontalAlignment="Left" Margin="12,14,0,0" Name="textBlock1" Text="作者声明:本游戏制作纯属爱好！其中使用的图片和背景音乐均来至互联网！如有侵犯到版权，请与我联系！我将及时处理!谢谢!!!" VerticalAlignment="Top" Width="576" TextWrapping="Wrap" />
+        <!--<Rectangle x:Name="rectangle1" Fill="#FF9191F9" Margin="-602,0,0,0" Stroke="Black" HorizontalAlignment="Left" Width="600" Height="300" d:LayoutOverrides="HorizontalAlignment" RenderTransformOrigin="0.5,0.5">
+        	<Rectangle.RenderTransform>
+        		<CompositeTransform/>
+        	</Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle x:Name="rectangle" Fill="#FFF9F591" Stroke="Black" HorizontalAlignment="Left" Width="600" Height="300" RenderTransformOrigin="0.5,0.5">
+        	<Rectangle.RenderTransform>
+        		<CompositeTransform/>
+        	</Rectangle.RenderTransform>
+        </Rectangle>-->
+    </Grid>
+</navigation:Page>

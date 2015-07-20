@@ -1,0 +1,21 @@
+﻿<StackPanel xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+            VerticalAlignment="Center" Margin="0,100,0,0"
+>
+    <StackPanel HorizontalAlignment="Center" Margin="0,28,0,0" Width="445">
+        <TextBlock  Margin="0,20,0,10" Height="70" Text="正在为您努力加载中..." FontSize="32" Foreground="red" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Bottom" TextAlignment="Center"/>
+        <Border Margin="0,5,0,0" Background="#FF85ADB3" Height="30" VerticalAlignment="Top" CornerRadius="16" Opacity="0.3"/>
+        <Rectangle Margin="9,-21,9,0" Height="13" Stroke="White" VerticalAlignment="Top" RadiusX="8" RadiusY="8" StrokeThickness="0">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFABB5AE"/>
+                    <GradientStop Color="#FF00EBFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+            <Rectangle.RenderTransform>
+                <ScaleTransform x:Name="ProgressBarScale" />
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <TextBlock x:Name="ProgressText" Margin="0,20,0,10" Height="70" Text="0%" FontSize="50" Foreground="Blue" Opacity="0.2" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Bottom" TextAlignment="Center"/>
+    </StackPanel>
+</StackPanel>

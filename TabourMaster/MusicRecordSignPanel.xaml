@@ -1,0 +1,93 @@
+﻿<UserControl xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"  x:Class="TabourMaster.MusicRecordSignPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="600">
+	<UserControl.Resources>
+		<Storyboard x:Name="sbHelp">
+			<DoubleAnimation Duration="0:0:1" To="600" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="tbHelp" d:IsOptimized="True"/>
+		</Storyboard>
+	</UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" Height="300" Width="600">
+    	<Grid.Background>
+    		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+    			<GradientStop Color="#FF7BD8FF" Offset="0"/>
+    			<GradientStop Color="White" Offset="1"/>
+    		</LinearGradientBrush>
+    	</Grid.Background>
+        <!--<Grid.Background>
+            <ImageBrush ImageSource="Res/Imgs/bluerect.png" >
+                <ImageBrush.Transform>
+                    <RotateTransform Angle="360" CenterX="300" CenterY="160"></RotateTransform>
+                </ImageBrush.Transform>
+            </ImageBrush>
+        </Grid.Background>-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="31" />
+            <RowDefinition Height="119"/>
+            <RowDefinition Height="61"/>
+            <RowDefinition Height="39"/>
+        </Grid.RowDefinitions>
+        <TextBlock Height="47" HorizontalAlignment="Left" Margin="134,1,0,0" Name="textBlock1" Text="歌曲节奏录制器" VerticalAlignment="Top" FontSize="48" FontFamily="STXingkai" Width="333" >
+        	<TextBlock.Foreground>
+        		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+        			<GradientStop Color="#FF330047" Offset="0"/>
+        			<GradientStop Color="#FFFF00AF" Offset="1"/>
+        		</LinearGradientBrush>
+        	</TextBlock.Foreground>
+        </TextBlock>
+        <Button Content="返回主菜单" Grid.Row="4" Height="33" HorizontalAlignment="Left" Margin="2,3,0,0" x:Name="btnBackMenu" VerticalAlignment="Top" Width="144" Click="btnBackMenu_Click" Style="{StaticResource btnStyle}" d:LayoutOverrides="HorizontalAlignment" />
+        <TextBlock HorizontalAlignment="Left" Margin="10,8,0,5" Grid.Row="1" TextWrapping="Wrap" Text="当前逝去时间(毫秒):" Width="107" FontWeight="Bold" />
+        <TextBlock x:Name="tbCurrentPassTime" HorizontalAlignment="Left" Margin="117,9,0,7" Grid.Row="1" TextWrapping="Wrap" Text="                  " Width="74"/>
+        <Button Content="开始录制" Grid.Row="3" Height="32" HorizontalAlignment="Right" Margin="0,1,7,0" x:Name="btnStartRecord" VerticalAlignment="Top" Width="93" Style="{StaticResource btnStyle}" Click="btnStartRecord_Click" />
+        <TextBlock Margin="199,7,282,6" Grid.Row="1" TextWrapping="Wrap" Text="上一次记录时间(毫秒):" FontWeight="Bold" />
+        <TextBlock x:Name="tbPreRecordTime" HorizontalAlignment="Left" Margin="318,8,0,8" Grid.Row="1" TextWrapping="Wrap" Text="                  " Width="74"/>
+        <TextBlock Margin="0,7,137,6" Grid.Row="1" TextWrapping="Wrap" Text="总记录次数:" HorizontalAlignment="Right" Width="62" FontWeight="Bold" />
+        <TextBlock x:Name="tbSignCount" HorizontalAlignment="Right" Margin="0,8,60,8" Grid.Row="1" TextWrapping="Wrap" Text="                  " Width="74"/>
+        <Button Content="帮助" Grid.Row="4" Height="33" HorizontalAlignment="Right" Margin="0,3,12,0" x:Name="btnBackMenu_Copy1" VerticalAlignment="Top" Width="63" Style="{StaticResource btnStyle}" Click="btnBackMenu_Copy1_Click" />
+        <TextBlock x:Name="tbHelp" Margin="-550,4,0,4" Grid.Row="2" TextWrapping="Wrap" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="527" Foreground="Red"><TextBlock.RenderTransform>
+        		<CompositeTransform/>
+        	</TextBlock.RenderTransform>
+            <Run Text="帮助信息:"/>
+            <LineBreak/>
+            <Run Text="一:笑脸插入对应按键:"/><LineBreak/><Run Text="1.橘黄色小笑脸: "/><Run Text="F和J按键都可以。 "/><Run Text="2.蓝色小笑脸: "/><Run Text="D和K按键都可以。"/><LineBreak/><Run Text="3.橘黄色大笑脸: "/><Run Text="L按键。"/><Run Text="3.蓝色大笑脸:"/><Run Text=" "/><Run Text="S按键"/><Run Text="。"/><LineBreak/><Run Text="二"/><Run Text=":"/><Run Text="录制流程"/><LineBreak/><Run Text="  先选择一首本地或者网络上的歌曲(URL地址)，然后点击开始录制，此时当前逝去时间开始计时，计时开始就会开始记录按键，当按键有效，就会记录当前节拍，录制结束你可以保存到本地存储。"/><LineBreak/><Run/><LineBreak/><Run/>
+        </TextBlock>
+        <Button Content="选择本地文件" Style="{StaticResource btnStyle}" Grid.Row="3" Height="32" Margin="12,0,0,0" Name="btnSelectFile" VerticalAlignment="Top" Click="btnSelectFile_Click" HorizontalAlignment="Left" Width="135" />
+        <ScrollViewer Grid.Row="2" Height="95" Margin="26,21,0,3" HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Left" Width="292">
+            <toolkit:WrapPanel Background="Transparent" Width="{Binding Width}" Name="wpSigns" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+                </toolkit:WrapPanel>
+        </ScrollViewer>
+        <TextBlock HorizontalAlignment="Left" Margin="6,44,0,27" Text="记录值" TextWrapping="Wrap" Width="17" Grid.Row="2" FontWeight="Bold" />
+        <Button Content="选择网络文件(URL)" Height="23" Margin="0,3,340,0" Name="button1" VerticalAlignment="Top" Grid.Row="3" HorizontalAlignment="Right" Width="111" IsEnabled="False" />
+        <TextBlock HorizontalAlignment="Left" Margin="3,1,0,100" Text="歌曲：" TextWrapping="Wrap" Width="36" Grid.Row="2" />
+        <TextBlock Grid.Row="2" Height="23" HorizontalAlignment="Right" Margin="0,3,7,0" Name="tbMusicPath" Text="                " VerticalAlignment="Top" Width="552" />
+        <Button Content="保存" Height="35" HorizontalAlignment="Right" Margin="0,0,106,0" Name="btnSave" Style="{StaticResource btnStyle}" VerticalAlignment="Top" Width="63" Grid.Row="3" Click="btnSave_Click" />
+        <ListBox FlowDirection="RightToLeft" Height="95" Margin="343,21,0,0" Name="lbLocalMusicList" VerticalAlignment="Top" Grid.Row="2" HorizontalAlignment="Left" Width="206" SelectionChanged="lbLocalMusicList_SelectionChanged" Background="{x:Null}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock FontFamily="Arial Black" FontSize="14" FontWeight="Bold" Height="16" Text="{Binding MusicName}" TextWrapping="Wrap" Width="{Binding Width}"><TextBlock.Foreground><LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0"><GradientStop Color="#FF352A03" /><GradientStop Color="#FFFFC700" Offset="1" /></LinearGradientBrush></TextBlock.Foreground></TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBlock HorizontalAlignment="Left" Margin="324,32,0,17" Text="已存列表" TextWrapping="Wrap" Width="13" Grid.Row="2" FontWeight="Bold" />
+        <Button Style="{StaticResource btnStyle}" Content="删除" Grid.Row="2" Height="49" HorizontalAlignment="Left" Margin="555,21,0,0" Name="btnDel" VerticalAlignment="Top" Width="38" IsEnabled="False" Click="btnDel_Click" />
+        <Line Margin="0,45,0,0" Stretch="Fill" Stroke="Black" X2="600" Y1="45" Y2="45" />
+        <Line Margin="0,56,0,0" Stretch="Fill" Stroke="Black" X2="600" Y1="45" Y2="45" Grid.Row="3" />
+        <TextBlock Margin="5,36,0,7" Text="保存设置：" TextWrapping="Wrap" Grid.Row="3" HorizontalAlignment="Left" Width="58" FontWeight="Bold" />
+        <!--<toolkit:NumericUpDown Grid.Row="3" Height="22" HorizontalAlignment="Right" Margin="0,34,446,0" Name="nuSpeed" VerticalAlignment="Top" Width="37" Maximum="5" Minimum="1" IsEditable="False" />-->
+        <TextBlock HorizontalAlignment="Left" Margin="69,36,0,7" Text="播放速度" TextWrapping="Wrap" Width="44" Grid.Row="3" />
+        <Button Content="复制" Height="23" HorizontalAlignment="Left" Margin="0,1,0,0" Name="btnCopySign" VerticalAlignment="Top" Width="31" Click="button2_Click" />
+        <Button Content="刷新" Height="29" HorizontalAlignment="Right" Margin="0,86,4,0" Name="button3" Style="{StaticResource btnStyle}" VerticalAlignment="Top" Width="49" Grid.Row="2" Click="button3_Click" />
+        <ComboBox Grid.Row="3" Height="23" HorizontalAlignment="Left" Margin="117,32,0,0" Name="nuSpeed" VerticalAlignment="Top" Width="39">
+            <ComboBoxItem Content="1" IsSelected="True" />
+            <ComboBoxItem Content="2" />
+            <ComboBoxItem Content="3" />
+            <ComboBoxItem Content="4" />
+            <ComboBoxItem Content="5" />
+        </ComboBox>
+    </Grid>
+</UserControl>

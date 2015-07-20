@@ -1,0 +1,31 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+ x:Class="TabourMaster.UControl.Drumhead" 
+ mc:Ignorable="d" Height="98" Width="98">
+	<UserControl.Resources>
+		<SolidColorBrush x:Key="GrannySmithAppleColor1" Color="#FF85DB18" />
+		<SolidColorBrush x:Key="GrannySmithAppleColor2" Color="#FFCDE855" />
+		<SolidColorBrush x:Key="GrannySmithAppleColor3" Color="#FFF5F6D4" />
+		<SolidColorBrush x:Key="GrannySmithAppleColor4" Color="#FFA7C520" />
+		<SolidColorBrush x:Key="GrannySmithAppleColor5" Color="#FF493F0B" />
+
+	</UserControl.Resources>
+    
+    <Canvas x:Name="LayoutRoot" Background="Transparent">
+		<Path x:Name="leftDrum" Data="M37.5,0.5 L37.5,74.5 C17.065464,74.5 0.5,57.934536 0.5,37.5 C0.5,17.065464 17.065464,0.50000042 37.5,0.5 z" Fill="{StaticResource GrannySmithAppleColor3}" Stretch="Fill" Stroke="Black" UseLayoutRounding="False" Width="38" Height="75" Canvas.Left="10" Canvas.Top="12" d:LayoutOverrides="Height"/>
+		<Path x:Name="rightSide" Data="M0.5,0.5 L0.71309036,0.50269651 C26.109827,1.1461266 46.5,21.935547 46.5,47.487347 C46.5,73.039139 26.109827,93.82856 0.71309036,94.471992 L0.5,94.474686 L0.5,84.473549 L1.4040143,84.439201 C20.953703,83.448227 36.5,67.283302 36.5,47.487347 C36.5,27.691387 20.953703,11.526464 1.4040143,10.535487 L0.5,10.50114 z" Fill="{StaticResource GrannySmithAppleColor2}" Stretch="Fill" Stroke="Black" UseLayoutRounding="False" Width="47" Height="95" Canvas.Left="48" Canvas.Top="2.013" d:LayoutOverrides="Height"/>
+		<Path x:Name="leftSide" Data="M0.5,0.5 L0.71309036,0.50269651 C26.109827,1.1461266 46.5,21.935547 46.5,47.487347 C46.5,73.039139 26.109827,93.82856 0.71309036,94.471992 L0.5,94.474686 L0.5,84.473549 L1.4040143,84.439201 C20.953703,83.448227 36.5,67.283302 36.5,47.487347 C36.5,27.691387 20.953703,11.526464 1.4040143,10.535487 L0.5,10.50114 z" Stretch="Fill" Stroke="Black" UseLayoutRounding="False" Width="47" RenderTransformOrigin="0.5,0.5" Height="95" Canvas.Left="1" Canvas.Top="2.013" d:LayoutOverrides="Height" Fill="{StaticResource GrannySmithAppleColor2}">
+			<Path.RenderTransform>
+				<CompositeTransform Rotation="180"/>
+			</Path.RenderTransform>
+		</Path>
+		<Path x:Name="rightDrum" Data="M37.5,0.5 L37.5,74.5 C17.065464,74.5 0.5,57.934536 0.5,37.5 C0.5,17.065464 17.065464,0.50000042 37.5,0.5 z" Fill="{StaticResource GrannySmithAppleColor3}" Stretch="Fill" Stroke="Black" UseLayoutRounding="False" Width="38" RenderTransformOrigin="0.5,0.5" Height="75" Canvas.Left="48" Canvas.Top="12" d:LayoutOverrides="Height">
+			<Path.RenderTransform>
+				<CompositeTransform Rotation="180"/>
+			</Path.RenderTransform>
+		</Path>
+	</Canvas>
+</UserControl>

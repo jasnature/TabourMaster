@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="TabourMaster.UControl.DoubleHitTime"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Height="30" Width="45">
+
+    <Canvas x:Name="LayoutRoot">
+        <TextBlock Visibility="Collapsed" Height="35" Name="tbHitCount" Text="000" Width="45" TextAlignment="Center" FontSize="22" FontWeight="Bold" Foreground="#FF4C4C4C"></TextBlock>
+    </Canvas>
+</UserControl>

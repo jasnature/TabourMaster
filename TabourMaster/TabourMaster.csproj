@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CEAD9A0C-D2C9-4666-8E10-4E92C510D5D6}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TabourMaster</RootNamespace>
+    <AssemblyName>TabourMaster</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>zh-Hans</SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>TabourMaster.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>TabourMaster.App</SilverlightAppEntry>
+    <TestPageFileName>TabourMasterTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>true</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>false</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20621.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Expression.Drawing" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Windows.Controls, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Navigation, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Compoent\CadenceSign.cs" />
+    <Compile Include="Compoent\CommHelper.cs" />
+    <Compile Include="Compoent\DrumKnockArgs.cs" />
+    <Compile Include="Compoent\DrumType.cs" />
+    <Compile Include="Compoent\GameResultInfo.cs" />
+    <Compile Include="Compoent\HitType.cs" />
+    <Compile Include="Compoent\IMyControl.cs" />
+    <Compile Include="Compoent\MusicInfo.cs" />
+    <Compile Include="Compoent\HitArgs.cs" />
+    <Compile Include="Compoent\ResourceMgr.cs" />
+    <Compile Include="GameEndPanel.xaml.cs">
+      <DependentUpon>GameEndPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UControl\CadencePanel.xaml.cs">
+      <DependentUpon>CadencePanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UControl\DoubleHitTime.xaml.cs">
+      <DependentUpon>DoubleHitTime.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UControl\Drumhead.xaml.cs">
+      <DependentUpon>Drumhead.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UControl\FetchPanel.xaml.cs">
+      <DependentUpon>FetchPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UControl\TheHitPanel.xaml.cs">
+      <DependentUpon>TheHitPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UControl\RangeAnimation.xaml.cs">
+      <DependentUpon>RangeAnimation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UControl\ScoreAnimationPanel.xaml.cs">
+      <DependentUpon>ScoreAnimationPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GamePanel.xaml.cs">
+      <DependentUpon>GamePanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Compoent\PanelType.cs" />
+    <Compile Include="MusicListPanel.xaml.cs">
+      <DependentUpon>MusicListPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MusicRecordSignPanel.xaml.cs">
+      <DependentUpon>MusicRecordSignPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StartPanel.xaml.cs">
+      <DependentUpon>StartPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UControl\UChildMessage.xaml.cs">
+      <DependentUpon>UChildMessage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="GameEndPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UControl\CadencePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UControl\DoubleHitTime.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UControl\Drumhead.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UControl\FetchPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UControl\TheHitPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UControl\RangeAnimation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UControl\ScoreAnimationPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GamePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MusicListPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MusicRecordSignPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StartPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UControl\UChildMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\OutOfBrowserSettings.xml" />
+    <Content Include="icon.png" />
+    <Content Include="Res\Imgs\drums\explosion_lower1.png" />
+    <Content Include="Res\Imgs\drums\explosion_lower2.png" />
+    <Content Include="Res\Imgs\resultboard.png" />
+    <Content Include="Res\Mus\taishuo.wma" />
+    <Content Include="Res\Sound\jingle_result.wma" />
+    <Content Include="Res\Sound\jingle_select.wma" />
+    <Content Include="Res\Sound\jingle_setting.wma" />
+    <Content Include="Res\Sound\title_call.m4a" />
+    <Content Include="Res\Sound\dong.wma" />
+    <Content Include="Res\Sound\ka.wma" />
+    <None Include="Res\Sound\voice_100combo_p1.wma" />
+    <None Include="Res\Sound\voice_200combo_p1.wma" />
+    <None Include="Res\Sound\voice_300combo_p1.wma" />
+    <None Include="Res\Sound\voice_400combo_p1.wma" />
+    <None Include="Res\Sound\voice_500combo_p1.wma" />
+    <None Include="Res\Sound\voice_50combo_p1.wma" />
+    <None Include="Res\Sound\voice_600combo_p1.wma" />
+    <None Include="Res\Sound\voice_700combo_p1.wma" />
+    <None Include="Res\Sound\voice_800combo_p1.wma" />
+    <None Include="Res\Sound\voice_900combo_p1.wma" />
+    <None Include="Res\Sound\voice_fullcombo_p1.wma" />
+    <Resource Include="Res\Imgs\bg2.png" />
+    <Resource Include="Res\Imgs\bg_bottom.png" />
+    <Resource Include="Res\Imgs\bluerect.png" />
+    <None Include="Res\Imgs\explosion_upper.png" />
+    <Content Include="Res\Imgs\fetch1.png" />
+    <Content Include="Res\Imgs\fetch2.png" />
+    <Content Include="Res\Imgs\fetch3.png" />
+    <Content Include="Res\Imgs\fetch4.png" />
+    <Content Include="Res\Imgs\fetch5.png" />
+    <Content Include="Res\Imgs\fetch6.png" />
+    <Content Include="Res\Imgs\fetch7.png" />
+    <Content Include="Res\Imgs\fetch8.png" />
+    <Content Include="Res\Imgs\fetch9.png" />
+    <Content Include="Res\Imgs\Gameicon.png" />
+    <Resource Include="Res\Imgs\bbg.png" />
+    <Content Include="Res\Imgs\drums\drum1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\Imgs\drums\drum2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\Imgs\drums\drum3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\Imgs\drums\drum4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\Imgs\drums\drum5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\Imgs\drums\drum5_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\Imgs\drums\drum5_2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\Imgs\drums\drum6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\Imgs\drums\drum6_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\Imgs\drums\drum6_2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\Imgs\drums\drum7.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\Imgs\drums\drum8.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\Imgs\drums\rdrum1.png" />
+    <Content Include="Res\Imgs\drums\rdrum2.png" />
+    <Content Include="Res\Imgs\drums\rdrum3.png" />
+    <Content Include="Res\Imgs\drums\rdrum4.png" />
+    <Content Include="Res\Imgs\drums\rdrum5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\Imgs\drums\rdrum6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\Imgs\drums\rdrum7.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\Imgs\drums\rdrum8.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\Imgs\fl_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\Imgs\fl_2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\Imgs\fl_3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\Imgs\fl_4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\Imgs\item_all.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\Imgs\normal.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\MusicList.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Resource Include="Res\Imgs\redrect.png" />
+    <Resource Include="Res\Imgs\snow.png" />
+    <Resource Include="Res\Imgs\soul.png" />
+    <Resource Include="Res\Imgs\startbg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Res\Imgs\bad.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\Imgs\nice.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\Silverlight\v4.0\Microsoft.Expression.Blend.Silverlight.targets" />
+</Project>
